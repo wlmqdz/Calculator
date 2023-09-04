@@ -8,7 +8,7 @@ import java.util.Arrays;
 
 public class Subtraction implements Operator {
     @Override
-    public String calculate(Operand... operands) {
+    public String operate(Operand... operands) {
         boolean isDouble = Arrays.stream(operands).anyMatch(operand -> operand instanceof DoubleOperand);
         double result = operands[0] instanceof DoubleOperand ? ((DoubleOperand) operands[0]).value : ((IntegerOperand) operands[0]).value;
         for (int i = 1; i < operands.length; i++) {

@@ -8,7 +8,7 @@ import java.util.Arrays;
 
 public class Addition implements Operator {
     @Override
-    public String calculate(Operand... operands) {
+    public String operate(Operand... operands) {
         boolean isDouble = Arrays.stream(operands).anyMatch(operand -> operand instanceof DoubleOperand);
         double result = 0.0;
         for (Operand opr : operands) {

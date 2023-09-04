@@ -11,7 +11,7 @@ class Unknown implements Operator {
     }
 
     @Override
-    public String calculate(Operand... operands) {
+    public String operate(Operand... operands) {
         return "Unknown operation " + str;
     }
 }

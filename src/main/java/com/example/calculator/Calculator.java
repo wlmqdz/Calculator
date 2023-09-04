@@ -13,6 +13,6 @@ public class Calculator {
         if (inputArr.length != 3) {
             return "Operand Operation Operand";
         }
-        return Operator.of(inputArr[1]).calculate(Operand.of(inputArr[0]), Operand.of(inputArr[2]));
+        return Operator.of(inputArr[1]).operate(Operand.of(inputArr[0]), Operand.of(inputArr[2]));
     }
 }

@@ -8,7 +8,7 @@ import java.util.Arrays;
 
 public class Multiplication implements Operator {
     @Override
-    public String calculate(Operand... operands) {
+    public String operate(Operand... operands) {
         boolean isDouble = Arrays.stream(operands).anyMatch(operand -> operand instanceof DoubleOperand);
         double result = 1.0;
         for (int i = 0; i < operands.length; i++) {

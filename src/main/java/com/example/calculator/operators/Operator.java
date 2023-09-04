@@ -3,7 +3,7 @@ package com.example.calculator.operators;
 import com.example.calculator.operands.Operand;
 
 public interface Operator {
-    String calculate(Operand... operands);
+    String operate(Operand... operands);
 
     static Operator of(String str) {
         return switch (str) {
