@@ -4,8 +4,6 @@ public interface Operand {
 
     double getValue();
 
-    String toString();
-
     static Operand of(String str) {
         str = str.replaceAll(",", "");
         return new DoubleOperand(str);
