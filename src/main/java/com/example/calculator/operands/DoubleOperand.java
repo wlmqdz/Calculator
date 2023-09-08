@@ -7,7 +7,7 @@ public class DoubleOperand implements Operand {
 
     private final int SCALE = 2;
 
-    private RoundingMode ROUNDING_MODE = RoundingMode.HALF_EVEN;
+    private final RoundingMode ROUNDING_MODE = RoundingMode.HALF_EVEN;
 
     public final BigDecimal value;
 
