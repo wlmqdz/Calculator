@@ -8,22 +8,22 @@ public class CalculatorTest {
 
     @Test
     void testAdd() {
-        assertEquals("3", new Calculator().calculate("1 + 2"));
+        assertEquals("3.00", new Calculator().calculate("1 + 2"));
     }
 
     @Test
     void testSubtraction() {
-        assertEquals("1", new Calculator().calculate("2 - 1"));
+        assertEquals("1.00", new Calculator().calculate("2 - 1"));
     }
 
     @Test
     void testMultiplication() {
-        assertEquals("6", new Calculator().calculate("2 * 3"));
+        assertEquals("6.00", new Calculator().calculate("2 * 3"));
     }
 
     @Test
     void testDivision() {
-        assertEquals("3", new Calculator().calculate("6 / 2"));
+        assertEquals("3.00", new Calculator().calculate("6 / 2"));
     }
 
     @Test

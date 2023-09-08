@@ -4,36 +4,38 @@ import com.example.calculator.operands.Operand;
 import com.example.calculator.operators.Operator;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class OperatorTest {
 
     @Test
     void testAdd() {
-        assertEquals("3", Operator.of("+").operate(Operand.of("1"), Operand.of("2")));
-        assertEquals("3.0", Operator.of("+").operate(Operand.of("1"), Operand.of("2.0")));
+        assertEquals("102.00", Operator.of("+").operate(Operand.of("100"), Operand.of("2")).toString());
     }
 
     @Test
     void testSubtraction() {
-        assertEquals("1", Operator.of("-").operate(Operand.of("2"), Operand.of("1")));
-        assertEquals("1.0", Operator.of("-").operate(Operand.of("2.0"), Operand.of("1")));
+        assertEquals("0.60", Operator.of("-").operate(Operand.of("2"), Operand.of("1.4")).toString());
+        assertEquals("1.00", Operator.of("-").operate(Operand.of("2"), Operand.of("1")).toString());
+        assertEquals("2.00", Operator.of("-").operate(Operand.of("2")).toString());
     }
 
     @Test
     void testMultiplication() {
-        assertEquals("6", Operator.of("*").operate(Operand.of("2"), Operand.of("3")));
-        assertEquals("6.0", Operator.of("*").operate(Operand.of("2.0"), Operand.of("3.0")));
+        assertEquals("6.00", Operator.of("*").operate(Operand.of("2.0"), Operand.of("3.0")).toString());
     }
 
     @Test
     void testDivision() {
-        assertEquals("3", Operator.of("/").operate(Operand.of("6"), Operand.of("2")));
-        assertEquals("3.0", Operator.of("/").operate(Operand.of("6"), Operand.of("2.0")));
+        assertEquals("3.00", Operator.of("/").operate(Operand.of("6"), Operand.of("2.0")).toString());
+        assertEquals("6.00", Operator.of("/").operate(Operand.of("6")).toString());
     }
 
     @Test
     void testUnknown() {
-        assertEquals("Unknown operation ?", Operator.of("?").operate(Operand.of("1"), Operand.of("2")));
+        Exception exception = assertThrows(IllegalArgumentException.class, () -> {
+            Operator.of("?").operate(Operand.of("1"), Operand.of("2"));
+        });
+        assertTrue("Unknown Operator doesn't support operate".contains(exception.getMessage()));
     }
 }

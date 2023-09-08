@@ -10,7 +10,7 @@ public class Unknown implements Operator {
     }
 
     @Override
-    public String operate(Operand... operands) {
-        return "Unknown operation " + str;
+    public Operand operate(Operand... operands) {
+        throw new IllegalArgumentException("Unknown Operator doesn't support operate");
     }
 }

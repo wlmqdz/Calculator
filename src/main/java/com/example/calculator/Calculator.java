@@ -11,7 +11,7 @@ public class Calculator {
     public String calculate(String input) {
         String[] inputArr = input.split(" ");
         if (inputArr.length == 3) {
-            return Operator.of(inputArr[1]).operate(Operand.of(inputArr[0]), Operand.of(inputArr[2]));
+            return Operator.of(inputArr[1]).operate(Operand.of(inputArr[0]), Operand.of(inputArr[2])).toString();
         } else {
             return "Operand Operation Operand";
         }
