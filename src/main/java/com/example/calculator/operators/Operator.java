@@ -5,13 +5,19 @@ import com.example.calculator.operands.Operand;
 public interface Operator {
     Operand operate(Operand... operands);
 
+    Addition addition = new Addition();
+    Subtraction subtraction = new Subtraction();
+    Multiplication multiplication = new Multiplication();
+    Division division = new Division();
+    Unknown unknown = new Unknown("Unknown");
+
     static Operator of(String str) {
         return switch (str) {
-            case "+" -> new Addition();
-            case "-" -> new Subtraction();
-            case "*" -> new Multiplication();
-            case "/" -> new Division();
-            default -> new Unknown(str);
+            case "+" -> addition;
+            case "-" -> subtraction;
+            case "*" -> multiplication;
+            case "/" -> division;
+            default -> unknown;
         };
     }
 }
