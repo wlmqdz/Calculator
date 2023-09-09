@@ -9,7 +9,6 @@ public interface Operator {
     Subtraction subtraction = new Subtraction();
     Multiplication multiplication = new Multiplication();
     Division division = new Division();
-    Unknown unknown = new Unknown("Unknown");
 
     static Operator of(String str) {
         return switch (str) {
@@ -17,7 +16,7 @@ public interface Operator {
             case "-" -> subtraction;
             case "*" -> multiplication;
             case "/" -> division;
-            default -> unknown;
+            default -> new Unknown(str);
         };
     }
 }
