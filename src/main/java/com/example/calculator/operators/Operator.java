@@ -16,7 +16,7 @@ public interface Operator {
             case "-" -> subtraction;
             case "*" -> multiplication;
             case "/" -> division;
-            default -> new Unknown(str);
+            default -> throw new IllegalArgumentException("Unknown operator " + str);
         };
     }
 }

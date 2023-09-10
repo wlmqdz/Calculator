@@ -4,7 +4,8 @@ import com.example.calculator.operands.Operand;
 import com.example.calculator.operators.Operator;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class OperatorTest {
 
@@ -36,6 +37,6 @@ public class OperatorTest {
         Exception exception = assertThrows(IllegalArgumentException.class, () -> {
             Operator.of("?").operate(Operand.of("1"), Operand.of("2"));
         });
-        assertTrue("Unknown Operator doesn't support operate".contains(exception.getMessage()));
+        assertEquals("Unknown operator ?", exception.getMessage());
     }
 }
