@@ -3,7 +3,7 @@ package com.example.calculator.operands;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
-public class DoubleOperand implements Operand {
+public class DecimalOperand implements Operand {
 
     private final int SCALE = 2;
 
@@ -11,11 +11,11 @@ public class DoubleOperand implements Operand {
 
     public final BigDecimal value;
 
-    public DoubleOperand(String input) {
+    public DecimalOperand(String input) {
         this.value = new BigDecimal(input).setScale(SCALE, ROUNDING_MODE);
     }
 
-    public DoubleOperand(double value) {
+    public DecimalOperand(double value) {
         this.value = new BigDecimal(value).setScale(SCALE, ROUNDING_MODE);
     }
 

@@ -6,11 +6,11 @@ public interface Operand {
 
     static Operand of(String str) {
         str = str.replaceAll(",", "");
-        return new DoubleOperand(str);
+        return new DecimalOperand(str);
     }
 
     static Operand of(double value) {
-        return new DoubleOperand(value);
+        return new DecimalOperand(value);
     }
 }
 
