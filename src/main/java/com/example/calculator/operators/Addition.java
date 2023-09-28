@@ -9,4 +9,9 @@ public class Addition implements Operator {
     public Operand operate(Operand... operands) {
         return Operand.of(Arrays.stream(operands).mapToDouble(Operand::getValue).sum());
     }
+
+    @Override
+    public String code() {
+        return "+";
+    }
 }

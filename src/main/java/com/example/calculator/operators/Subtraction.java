@@ -10,4 +10,9 @@ public class Subtraction implements Operator {
         double result = operands[0].getValue();
         return Operand.of(Arrays.stream(operands).skip(1).mapToDouble(Operand::getValue).reduce(result, (a, b) -> a - b));
     }
+
+    @Override
+    public String code() {
+        return "-";
+    }
 }

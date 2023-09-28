@@ -9,4 +9,9 @@ public class Multiplication implements Operator {
     public Operand operate(Operand... operands) {
         return Operand.of(Arrays.stream(operands).mapToDouble(Operand::getValue).reduce(1.0, (a, b) -> a * b));
     }
+
+    @Override
+    public String code() {
+        return "*";
+    }
 }
